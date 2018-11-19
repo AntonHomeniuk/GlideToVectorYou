@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.module.LibraryGlideModule;
 import com.caverock.androidsvg.SVG;
 
 import java.io.InputStream;
@@ -16,7 +16,7 @@ import java.io.InputStream;
  * Module for the SVG sample app.
  */
 @GlideModule
-public class SvgModule extends AppGlideModule {
+public class SvgModule extends LibraryGlideModule {
   @Override
   public void registerComponents(@NonNull Context context, @NonNull Glide glide,
       @NonNull Registry registry) {
@@ -24,9 +24,9 @@ public class SvgModule extends AppGlideModule {
         .append(InputStream.class, SVG.class, new SvgDecoder());
   }
 
-  // Disable manifest parsing to avoid adding similar modules twice.
+  /* Disable manifest parsing to avoid adding similar modules twice.
   @Override
   public boolean isManifestParsingEnabled() {
     return false;
-  }
+  }*/
 }
